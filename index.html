@@ -1,18 +1,94 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="icon" href="../../favicon.ico">
 	 	<title>Safesight</title>
-	 	<link type="text/css" rel="stylesheet" href="static/css/style.css" />
 	 	<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	 	<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="https://use.fontawesome.com/daa318f87c.js"></script>
+	 	<link type="text/css" rel="stylesheet" href="static/css/style.css" />
 	</head>
-	<body>
-	 	<p>Welcome to this page.</p>
+	<body cz-shortcut-listen="true">
+	 	<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#"><img src="static/images/logo.png" alt="Safesight" /></a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-left">
+	            <li><a href="#">Logboek<span>125</span></a></li>
+	            <li><a href="#">Taken</a></li>
+	            <li><a href="#">App</a></li>
+	            <li><a href="#">Bibliotheek</a></li>
+	          </ul>
+	          <div class="nav navbar-nav navbar-right">
+	          	<div class="user">
+	          		<span class="user-name"><i class="fa fa-lg fa-caret-down"></i>&nbsp;Edo Haan</span>
+	          		<div class="user-pic">
+	          			<img src="static/images/logo.jpg" alt="User" />
+	          			<span class="badge">5</span>
+	          		</div>
+	          	</div>
+	          </div>
+	          <!-- <form class="navbar-form navbar-right">
+	            <input type="text" class="form-control" placeholder="Search...">
+	          </form> -->
+	        </div>
+	      </div>
+	    </nav>
+	    <div class="container-fluid">
+	      <div class="row">
+	        <div class="col-sm-4 col-md-3 sidebar">
+	        	<form class="navbar-form nav nav-sidebar">
+	        		<span class="icon"><img src="static/images/ico-calendar.png" alt="calendar" /></span>
+	            	<input type="date" class="form-control" placeholder="3 November 2016">
+	          	</form>
+	        	<div class="nav nav-sidebar drop-list">
+		        	<a href="#SubMenu1" class="list-group-item list-head" data-toggle="collapse" data-parent="#SubMenu1">Status<i class="fa fa-caret-down"></i></a>
+			        <div class="collapse list-group-submenu list-group-submenu-1" id="SubMenu1">
+			          <a href="#" class="list-group-item" data-parent="#SubMenu1"><label><input type="checkbox" value="">Open&nbsp;(<span>34</span>)</label></a>
+			          <a href="#" class="list-group-item" data-parent="#SubMenu1"><label><input type="checkbox" value="">Gesloten&nbsp;(<span>4</span>)</label></a>
+			        </div>
+			    </div>
+			    <div class="nav nav-sidebar drop-list">
+		        	<a href="#SubMenu2" class="list-group-item list-head" data-toggle="collapse" data-parent="#SubMenu2">Toewijzing<i class="fa fa-caret-down"></i></a>
+			        <div class="collapse list-group-submenu list-group-submenu-1" id="SubMenu2">
+			          <a href="#" class="list-group-item" data-parent="#SubMenu2"><label><input type="checkbox" value="">Beveiliging&nbsp;(<span>34</span>)</label></a>
+			          <a href="#" class="list-group-item" data-parent="#SubMenu2"><label><input type="checkbox" value="">Organisatie&nbsp;(<span>4</span>)</label></a>
+			          <a href="#" class="list-group-item" data-parent="#SubMenu2"><label><input type="checkbox" value="">Beiden&nbsp;(<span>40</span>)</label></a>
+			        </div>
+			    </div>
+	        	<form class="navbar-form nav nav-sidebar">
+	        		<span class="icon"><img src="static/images/ico-search.png" alt="Search" /></span>
+	            	<input type="text" class="form-control" placeholder="Zoeken op trefwoord">
+	          	</form>
+
+	          <!-- <ul class="nav nav-sidebar">
+	            <li><a href="">Nav item again</a></li>
+	            <li><a href="">One more nav</a></li>
+	            <li><a href="">Another nav item</a></li>
+	          </ul> -->
+	        </div>
+	        <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
+	          
+	        </div>
+	      </div>
+    	</div>
 	</body>
 </html>
