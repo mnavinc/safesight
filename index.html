@@ -6,8 +6,10 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <meta name="description" content="">
 	    <meta name="author" content="">
+	    <link rel="icon" type="image/png" href="static/images/favicon.ico" />
 	    <link rel="icon" href="../../favicon.ico">
 	 	<title>Logboek - Safesight</title>
+	 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	 	<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	 	<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -17,8 +19,10 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="https://use.fontawesome.com/daa318f87c.js"></script>
 	 	<link type="text/css" rel="stylesheet" href="static/css/style.css" />
+	 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	</head>
 	<body cz-shortcut-listen="true">
+		<div class="overlay"></div>
 	 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	      <div class="container-fluid">
 	        <div class="navbar-header">
@@ -80,14 +84,14 @@
 	            	<input type="text" class="form-control" placeholder="Zoeken op trefwoord">
 	          	</form>
 	          	<ul class="nav nav-sidebar box export">
-	        		<li><span class="icon"><img src="static/images/ico-clip.png" alt="Download" /></span><span>Exporteer naar Excel</span></li>
+	        		<li><a href="#"><span class="icon"><img src="static/images/ico-clip.png" alt="Download" /></span><span>Exporteer naar Excel</span></a></li>
 	        	</ul>
 	        </div>
 	        <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
-	        	<form>
+	        	<form class="addItem-outer">
 	        		<div class="col-sm-12 col-md-12 addItem card">Logboek item aanmaken<i class="fa fa-lg fa-plus-square-o"></i>
 	        		</div>
-	        		<div class="inputCard card">
+	        		<div class="inputCard card animated fadeIn">
 		        		<div class="col-sm-12 col-md-12 inputCard-top">
 					        <div class="control-group">
 								<div class="controls form-inline">
@@ -97,7 +101,7 @@
 									</div>
 									<div class="col-sm-12 col-md-3 form-group">
 										<label for="gemeld">Gemeld Door</label>
-										<input type="text" class="input-small" placeholder="" id="inputValue">
+										<input type="text" class="input-small" placeholder="CPO" id="inputValue">
 									</div>
 									<div class="col-sm-12 col-md-3 form-group">
 										<label for="voor">Voor</label>
@@ -141,39 +145,176 @@
 						</div>
 			        </div>
 	        	</form>
-	            <table class="table table-responsive">
-	            	<thead class="thead-inverse">
-	            		<tr>
-		            		<th>Tijd</th>
-		            		<th>Melding</th>
-		            		<th>Gemeld</th>
-		            		<th>Voor</th>
-		            		<th>Status</th>
-		            		<th>Prio</th>
-		            	</tr>
-	            	</thead>
-	            	<tbody>
-	            		<tr>
-	            			<td>23:01</td>
-	            			<td>Muziek op alle stages is uitgevallen.</td>
-	            			<td>CPO</td>
-	            			<td>Edo Haan</td>
-	            			<td><img src="static/images/ico-lock.png" alt="closed" /></td>
-	            			<td><img src="static/images/ico-severity-red.png" alt="red"</td>
-	            		</tr>
-	            		<tr>
-	            			<td>23:01</td>
-	            			<td>Muziek op alle stages is uitgevallen.Muziek op alle stages is uitgevallen.</td>
-	            			<td>CPO</td>
-	            			<td>Edo Haan</td>
-	            			<td><img src="static/images/ico-lock.png" alt="closed" /></td>
-	            			<td><img src="static/images/ico-severity-red.png" alt="red"</td>
-	            		</tr>
-	            	</tbody>
-				</table>
-
+	        	<div class="table-outer">
+		            <table class="table table-responsive">
+		            	<thead class="thead-inverse">
+		            		<tr>
+			            		<th>Tijd<i class="fa fa-lg fa-unsorted"></i></th>
+			            		<th>Melding<i class="fa fa-lg fa-unsorted"></i></th>
+			            		<th>Gemeld</th>
+			            		<th>Voor<i class="fa fa-lg fa-unsorted"></i></th>
+			            		<th>Status<i class="fa fa-lg fa-unsorted"></i></th>
+			            		<th>Prio<i class="fa fa-lg fa-unsorted"></i></th>
+			            	</tr>
+		            	</thead>
+		            	<tbody>
+		            		<tr>
+		            			<td>23:01</td>
+		            			<td>Muziek op alle stages is uitgevallen.</td>
+		            			<td>CPO</td>
+		            			<td>Edo Haan</td>
+		            			<td><img src="static/images/ico-lock.png" alt="closed" /></td>
+		            			<td><img src="static/images/ico-severity-red.png" alt="red"</td>
+		            		</tr>
+		            		<tr>
+		            			<td>23:01</td>
+		            			<td>Muziek op alle stages is uitgevallen.Muziek op alle stages is uitgevallen.</td>
+		            			<td>CPO</td>
+		            			<td>Edo Haan</td>
+		            			<td><img src="static/images/ico-lock.png" alt="closed" /></td>
+		            			<td><img src="static/images/ico-severity-red.png" alt="red"</td>
+		            		</tr>
+		            		<tr class="row" style="display:none">
+		            			<td class="col-sm-12 col-md-12">
+		            				<div class="inputCard card animated fadeIn">
+										<div class="col-sm-12 col-md-12 inputCard-top">
+											<div class="control-group">
+												<div class="controls form-inline">
+													<div class="col-sm-12 col-md-3 form-group">
+														<label for="tijd">Tijd</label>
+														<input type="text" class="input-small" placeholder="23:01" id="inputKey">
+													</div>
+													<div class="col-sm-12 col-md-3 form-group">
+														<label for="gemeld">Gemeld Door</label>
+														<input type="text" class="input-small" placeholder="" id="inputValue">
+													</div>
+													<div class="col-sm-12 col-md-3 form-group">
+														<label for="voor">Voor</label>
+														<input type="text" class="input-small" placeholder="Ontvanger" id="inputValue">
+													</div>
+													<div class="col-sm-12 col-md-2 form-group">
+														<ul class="severity-group">
+															<li><img src="static/images/ico-severity-green.png" alt="green" /></li>
+															<li><img src="static/images/ico-severity-yellow.png" alt="yellow" /></li>
+															<li><img src="static/images/ico-severity-orange.png" alt="orange" /></li>
+															<li><img src="static/images/ico-severity-red.png" alt="red" /></li>
+															<li class="active"><img src="static/images/ico-severity-black.png" alt="black" /></li>
+														</ul>
+													</div>
+													<div class="col-sm-12 col-md-1 form-group">
+														<ul class="lock-group">
+															<li class="lock active"></li>
+															<li class="open"></li>
+														</ul>
+													</div>
+													<!-- <div class="col-sm-12 col-md-1 form-group">
+														<p><i class="fa fa-lg fa-minus-square-o"></i></p>
+													</div> -->
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-12 col-md-12 inputCard-middle">
+											<input type="text" placeholder="Log een melding..." />
+											<span><i class="fa fa-lg fa-check-square-o"></i>&nbsp;&nbsp;Gebruik enter om te loggen</span>
+										</div>
+										<div class="col-sm-12 col-md-12 inputCard-bottom">
+											<ul class="left col-sm-12 col-md-8">
+												<li><span><img src="static/images/ico-user.png" alt="user" /></span>Bobby Gonzalez</li>
+												<li><span><img src="static/images/ico-clip.png" alt="clip" /></span>Bijlage Toevoegen</li>
+												<li>Verzenden Als<span class="badge">To Do</span></li>
+											</ul>
+											<div class="btns right col-sm-12 col-md-4">
+												<button class="col-sm-12 col-md-6">Loggen</button>
+												<button class="col-sm-12 col-md-6">Annuleren</button>
+											</div> 
+										</div>
+								    </div>				
+		            			</td>
+		            		</tr>
+		            	</tbody>
+					</table>
+					<div class="inputCard-modal">
+						<div class="inputCard card animated fadeIn">
+							<div class="col-sm-12 col-md-12 inputCard-top">
+								<div class="control-group">
+									<div class="controls form-inline">
+										<div class="col-sm-12 col-md-2 form-group">
+											<label for="tijd">Tijd</label>
+											<input type="text" class="input-small" placeholder="23:01" id="inputKey">
+										</div>
+										<div class="col-sm-12 col-md-3 form-group">
+											<label for="gemeld">Gemeld Door</label>
+											<input type="text" class="input-small" placeholder="CPO" id="inputValue">
+										</div>
+										<div class="col-sm-12 col-md-3 form-group">
+											<label for="voor">Voor</label>
+											<input type="text" class="input-small" placeholder="Ontvanger" id="inputValue">
+										</div>
+										<div class="col-sm-12 col-md-2 form-group">
+											<ul class="severity-group">
+												<li><img src="static/images/ico-severity-green.png" alt="green" /></li>
+												<li><img src="static/images/ico-severity-yellow.png" alt="yellow" /></li>
+												<li><img src="static/images/ico-severity-orange.png" alt="orange" /></li>
+												<li><img src="static/images/ico-severity-red.png" alt="red" /></li>
+												<li class="active"><img src="static/images/ico-severity-black.png" alt="black" /></li>
+											</ul>
+										</div>
+										<div class="col-sm-12 col-md-2 form-group">
+											<ul class="lock-group">
+												<li class="lock active"></li>
+												<li class="open"></li>
+											</ul>
+										</div>
+										<!-- <div class="col-sm-12 col-md-1 form-group">
+											<p><i class="fa fa-lg fa-minus-square-o"></i></p>
+										</div> -->
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 inputCard-middle">
+								<input type="text" placeholder="Log een melding..." />
+								<span>Laatst bewerkt 22:45</span>
+								<span><i class="fa fa-lg fa-check-square-o"></i>&nbsp;&nbsp;Gebruik enter om te loggen</span>
+							</div>
+							<div class="col-sm-12 col-md-12 inputCard-bottom">
+								<ul class="left col-sm-12 col-md-8">
+									<li><span><img src="static/images/ico-user.png" alt="user" /></span>Bobby Gonzalez</li>
+									<li><span><img src="static/images/ico-clip.png" alt="clip" /></span>Bijlage Toevoegen</li>
+									<li>Verzenden Als<span class="badge">To Do</span></li>
+								</ul>
+								<div class="btns right col-sm-12 col-md-4">
+									<button class="col-sm-6 col-md-6">Loggen</button>
+									<button class="col-sm-6 col-md-6"><img src="static/images/ico-delete.png" alt="delete" /></button>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</div>
 	        </div>
 	      </div>
     	</div>
 	</body>
+<script type="text/JavaScript">
+$(".addItem-outer .addItem i").click(function(){
+	$(".addItem-outer .inputCard").css("display", "inline-block");
+	$(".addItem-outer .addItem").hide();
+});
+$(".addItem-outer .inputCard i").click(function(){
+	$(".addItem-outer .inputCard").hide();
+	$(".addItem-outer .addItem").show();
+});
+$(".table tbody tr").click(function(){
+	$(".inputCard-modal .inputCard").css("display", "inline-block");
+	$(".overlay").show();
+});
+$(".inputCard-modal button").click(function(){
+	$(".inputCard-modal .inputCard").hide();
+	$(".overlay").hide();
+});
+$(".overlay").click(function(){
+	$(".inputCard-modal .inputCard").hide();
+	$(".overlay").hide();
+});
+
+</script>
 </html>
