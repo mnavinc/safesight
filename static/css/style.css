@@ -270,7 +270,7 @@ form.nav-sidebar input {
     position: relative;
     color: #8493A7;
     font-size: 15px;
-    padding: 7px 5px;
+    padding: 7px 15px;
 }
 .form-control:focus,
 input:focus {
@@ -351,7 +351,7 @@ button.list-group-item:hover{
     color: #384B64;
 }
 .table tbody tr{
-  cursor:pointer;
+  cursor:pointer ;
 }
 .table thead th i.fa-unsorted {
     font-size: 16px;
