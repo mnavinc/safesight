@@ -263,6 +263,7 @@ form.nav-sidebar input {
     opacity: 0;
     position: absolute;
     z-index: 9;
+    cursor: pointer;
 }
 .nav-sidebar.date span.op {
     display: inline-block;
