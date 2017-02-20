@@ -19,6 +19,7 @@ input{
   border-radius: 5px;
   border: 1px solid #DDE1E9;
   color:#384B64;
+  height: 36px;
 }
 .sub-header {
   	padding-bottom: 10px;
@@ -190,8 +191,52 @@ input{
     color: #8493A7;
 }
 .list-group-item label input {
-	margin:auto 5px auto auto;
+    position: absolute;
+    z-index: 99;
+    opacity: 0;
+    margin-right: 15px;
+    width: 16px;
+    height: 16px;
+    left:0;
 }
+.list-group-item label.active img{
+  content: url("../images/checkbox.png");
+}
+.list-group-item label img {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    top: -2px;
+    background-color:#fff;
+    margin-right:10px;
+    cursor:pointer;
+    box-shadow: 0 1px 2px 0 rgba(211,215,217,0.52);
+    border-radius: 5px;
+    border: 1px solid #DDE1E9;
+}
+/*.list-group-item label input[type="checkbox"]:before {
+    content:url("../images/emptycheckbox.png");
+    display: block;
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    position: absolute;
+    object-fit: fill;
+    object-position: center;
+    background-color: #fff;
+    top: -14px;
+    left:0;
+    background-image:src("../images/emptycheckbox.png");
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    overflow:hidden;
+}
+.list-group-item label input[type="checkbox"]:checked:before {
+    background-image:src("../images/checkbox.png");
+    content:url("../images/checkbox.png");
+}*/
 form.nav-sidebar{
     padding: 3px 0;
     background: #fff;
@@ -214,17 +259,18 @@ form.nav-sidebar input {
     color: #8493A7;
     font-size: 15px;
 }
-.nav-sidebar.date input{
-  opacity:0;
+.nav-sidebar.date input {
+    opacity: 0;
+    position: absolute;
+    z-index: 9;
 }
 .nav-sidebar.date span.op {
     display: inline-block;
     width: calc(100% - 36px);
-    position: absolute;
-    top: 10px;
-    right: 0;
+    position: relative;
     color: #8493A7;
     font-size: 15px;
+    padding: 7px 5px;
 }
 .form-control:focus,
 input:focus {
@@ -248,6 +294,7 @@ input:focus {
 }
 .nav-sidebar.export a:hover{
   text-decoration:underline;
+  background-color:#F0F4F7;
 }
 a.list-group-item:focus,
 a.list-group-item:hover,
@@ -298,7 +345,13 @@ button.list-group-item:hover{
 .table {
     box-shadow: 0px 0px 1px #999;
     border-radius: 5px;
+    color: #8493A7;
+}
+.table tbody tr td:nth-child(2){
     color: #384B64;
+}
+.table tbody tr{
+  cursor:pointer;
 }
 .table thead th i.fa-unsorted {
     font-size: 16px;
@@ -307,6 +360,7 @@ button.list-group-item:hover{
     margin-left: 3px;
     line-height: 1;
     top: -2px;
+    cursor:pointer;
 }
 .table thead th:first-child{
   border-radius:5px 0px 0px 0px;
@@ -335,10 +389,23 @@ button.list-group-item:hover{
     font-size: 16px;
     margin-bottom:20px;
 }
-.addItem i {
+.addItem span.ico,
+.inputCard span.ico {
     position: absolute;
-    right: 15px;
-    line-height: 1;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 0.85;
+    font-size: 36px;
+    cursor:pointer;
+}
+.addItem span.ico{
+  top:8px;
+}
+.inputCard span.ico{
+  top:10px;
+  right:-5px;
 }
 .table thead th:nth-child(2),
 .table tbody td:nth-child(2){
@@ -366,10 +433,11 @@ thead.thead-inverse {
     box-shadow: 0 1px 2px 0 rgba(211,215,217,0.52);
     border-radius: 5px;
     border: 1px solid #DDE1E9;
+    font-size: 15px;
 }
 .inputCard .control-group .form-group:nth-child(2) input,
 .inputCard .control-group .form-group:nth-child(3) input{
-  width:120px;
+  width:100px;
 }
 .inputCard .control-group .form-group:nth-child(1) input{
   width:105px;
@@ -387,11 +455,11 @@ thead.thead-inverse {
   text-align:left;
 }
 .inputCard .control-group .form-group:nth-child(5){
-  text-align:center;
+  padding:10px 0;
 }
 .inputCard .control-group label {
     width: auto;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: normal;
     vertical-align: middle;
     display: inline-block;
@@ -399,8 +467,8 @@ thead.thead-inverse {
     color: #8493A7;
 }
 .inputCard .control-group ul.lock-group li{
-    width: 27px;
-    height: 27px;
+    width: 36px;
+    height: 36px;
     box-shadow: 0px 0px 1px #999;
     background-image: url("../images/ico-unlock.png");
     background-size: 50%;
@@ -412,6 +480,7 @@ thead.thead-inverse {
     float: left;
     background-color:#DFE5E8;
     filter:grayscale(100%);
+    cursor:pointer;
 }
 .inputCard .control-group ul.lock-group li:first-child{
     background-image: url("../images/ico-lock.png");
@@ -420,11 +489,14 @@ thead.thead-inverse {
 .inputCard .control-group ul.lock-group li:last-child{
     border-radius:0 5px 5px 0;
 }
-.inputCard .control-group ul.lock-group li.active{
+.inputCard .control-group ul.lock-group li.active,
+.inputCard .control-group ul.lock-group li:hover,
+.inputCard .control-group ul.lock-group li:focus{
     filter:grayscale(0%);
     background-color:#fff;
     box-shadow: 0 1px 2px 0 rgba(211,215,217,0.52);
     border-radius:5px;
+    border: 1px solid #e5e5e5;
 }
 ul.lock-group {
     /*background-color: #DFE5E8;*/
@@ -433,8 +505,8 @@ ul.lock-group {
     margin: auto;
 }
 .inputCard .control-group ul.severity-group li {
-    width: 27px;
-    height: 27px;
+    width: 36px;
+    height: 36px;
     list-style: none;
     display: inline-block;
     margin: auto 0;
@@ -442,23 +514,28 @@ ul.lock-group {
     object-fit: cover;
     object-position: center;
     text-align: center;
+    cursor:pointer;
 }
 .inputCard .control-group ul.severity-group li img {
     vertical-align: middle;
     max-width: 100%;
     text-align: center;
     position: relative;
+    top: 5px;
 }
-.inputCard .control-group ul.severity-group li.active{
+.inputCard .control-group ul.severity-group li.active,
+.inputCard .control-group ul.severity-group li:hover,
+.inputCard .control-group ul.severity-group li:focus{
     background-color:#fff;
     box-shadow:1px solid #999;
     border-radius:5px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 2px 0 rgba(211,215,217,0.52);
 }
 .inputCard-top ul {
     margin-bottom: 0;
     display: inline-block;
     vertical-align: middle;
-    padding: 3px 0;
 }
 .inputCard-middle{
   background-color:#fff;
@@ -469,18 +546,27 @@ ul.lock-group {
 .inputCard-middle input{
     width: 100%;
     border: 0 solid #000;
-    padding: 15px 0;
-    min-height: 120px;
+    padding: 15px 5px;
+    min-height: 85px;
     padding-bottom:20px;
+}
+.inputCard-middle textarea{
+    width: 100%;
+    border: 0 solid #000;
+    min-height: 60px;
+    overflow: auto;
+    padding: 0 5px;
+    margin:20px auto;
+    resize:none;
 }
 .inputCard-middle span{
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     font-size: 12px;
     right: 15px;
 }
 .table-outer .inputCard-middle span:first-of-type{
-    left: 15px;
+    left: 20px;
     right: auto;
 }
 .inputCard-bottom ul {
@@ -491,9 +577,15 @@ ul.lock-group {
     list-style: none;
     margin: auto;
     display: inline-block;
-    padding: 0 5px;
+    padding: 0 20px;
     font-size: 14px;
     color: #8493A7;
+}
+.inputCard-bottom ul li:first-child{
+  padding-left:0;
+}
+.inputCard-bottom ul li:last-child{
+  padding-right:0;
 }
 .inputCard-bottom ul li:nth-child(2) {
     border-left: 1px solid #ccc;
@@ -503,22 +595,29 @@ ul.lock-group {
     vertical-align: middle;
     margin-right: 5px;
     position: relative;
-    top: -2px;
+    top: -4px;
 }
-.inputCard-bottom ul li:last-child span{
-    font-size: 10px;
+.inputCard-bottom ul li:last-child button {
+    font-size: 10.5px;
     border: 0px solid #000;
-    padding: 5px;
+    padding: 0 10px;
+    top: -2px;
+    position: relative;
+    margin-right: 5px;
+    height: 20px;
+}
+.inputCard-bottom ul li:last-child button:last-child{
+    background-color:#22b7f7;
 }
 .inputCard-bottom .btns button {
     border: 0;
     background-color: transparent;
     float: right;
     padding: 15px 0;
-    right:-30px;
+    right:-31px;
 }
 .inputCard-bottom .btns button:first-child{
-        background-image: linear-gradient(-180deg, #857AFF 0%, #6B60E1 98%);
+    background-image: linear-gradient(-180deg, #857AFF 0%, #6B60E1 98%);
     border:1px solid #453CA4;
     color:#fff;
 }
