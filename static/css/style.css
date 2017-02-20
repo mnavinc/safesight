@@ -469,7 +469,6 @@ thead.thead-inverse {
 .inputCard .control-group ul.lock-group li{
     width: 36px;
     height: 36px;
-    box-shadow: 0px 0px 1px #999;
     background-image: url("../images/ico-unlock.png");
     background-size: 50%;
     background-repeat: no-repeat;
@@ -558,6 +557,9 @@ ul.lock-group {
     padding: 0 5px;
     margin:20px auto;
     resize:none;
+}
+.inputCard-middle textarea:focus{
+    outline:0;
 }
 .inputCard-middle span{
     position: absolute;
