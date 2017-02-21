@@ -111,6 +111,11 @@ input{
     padding: 2px 4px;
     font-size:50%;
 }
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color:inherit;
+    border-bottom: 2px solid #857AFF;
+}
 /*sidebar*/
 .sidebar {
   	display: none;
@@ -321,7 +326,6 @@ a.list-group-item:hover,
 button.list-group-item:focus,
 button.list-group-item:hover{
 	background-color:transparent;
-	font-weight:900;
   color:#384B64;
 }
 .card {
@@ -370,8 +374,9 @@ button.list-group-item:hover{
 .table tbody tr td:nth-child(2){
     color: #384B64;
 }
-.table tbody tr{
-  cursor:pointer ;
+.table tbody tr {
+    cursor: pointer;
+    position: relative;
 }
 .table thead th{
   position:relative;
@@ -408,6 +413,12 @@ button.list-group-item:hover{
     /*white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;*/
+}
+.table tr.modalTr td{
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    z-index:99999;
 }
 .addItem {
     padding: 15px;
@@ -642,6 +653,7 @@ ul.lock-group {
     padding: 0 20px;
     font-size: 14px;
     color: #8493A7;
+    float:left;
 }
 .inputCard-bottom ul li:first-child{
   padding-left:0;
@@ -652,7 +664,11 @@ ul.lock-group {
 .inputCard-bottom ul li:nth-child(2) {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
-    position:relative;
+    position: relative;
+    max-width: 180px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .inputCard-bottom ul li span {
     vertical-align: middle;
@@ -723,10 +739,7 @@ ul.lock-group {
   margin:auto;
 }
 .table-outer .inputCard-modal {
-  position: absolute;
-  top: 57%;
   background-color:#F0F4F7;
-  z-index: 99999;
   width:100%;
 }
 .table-outer .inputCard{
@@ -734,6 +747,7 @@ ul.lock-group {
   margin-bottom:-4px;
   display:none;
   width:100%;
+  border: 0 solid transparent;
 }
 .overlay {
     background-color: rgba(0, 0, 0, 0.35);
