@@ -382,11 +382,12 @@ button.list-group-item:hover{
     vertical-align: middle;
     margin-left: 3px;
     line-height: 1;
-    top: 8px;
+    top: 10px;
+    font-size:12px;
     cursor: pointer;
 }
 .table thead th .fa:nth-child(2){
-  top:11px;
+  top:15px;
 }
 .table thead th:first-child{
   border-radius:5px 0px 0px 0px;
