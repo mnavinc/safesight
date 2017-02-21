@@ -21,6 +21,20 @@ input{
   color:#384B64;
   height: 36px;
 }
+::-webkit-input-placeholder {
+    color:    #8493A7;
+}
+:-moz-placeholder {
+   color:    #8493A7;
+   opacity:  1;
+}
+::-moz-placeholder {
+   color:    #8493A7;
+   opacity:  1;
+}
+:-ms-input-placeholder {
+   color:    #8493A7;
+}
 .sub-header {
   	padding-bottom: 10px;
   	border-bottom: 1px solid #eee;
@@ -122,6 +136,8 @@ input{
   }
   .container-fluid>.navbar-header{
   	padding:5px 0;
+    position: relative;
+    left: 5px;
   }
   form.nav-sidebar input {
     width: calc(100% - 26px) !important;
@@ -137,7 +153,7 @@ input{
 .nav-sidebar {
   	margin-right: auto; /* 20px padding + 1px border */
   	margin-bottom: 20px;
-  	margin-left: 20px;
+  	margin-left: 0px;
 }
 .nav-sidebar > li > a {
   	padding-right: 20px;
@@ -258,12 +274,15 @@ form.nav-sidebar input {
     box-shadow: inset 0 0px 0px #000;
     color: #8493A7;
     font-size: 15px;
+    padding: 6px 5px;
 }
 .nav-sidebar.date input {
     opacity: 0;
     position: absolute;
     z-index: 9;
     cursor: pointer;
+    width: 100% !important;
+    left: 0;
 }
 .nav-sidebar.date span.op {
     display: inline-block;
@@ -271,7 +290,7 @@ form.nav-sidebar input {
     position: relative;
     color: #8493A7;
     font-size: 15px;
-    padding: 7px 15px;
+    padding: 7px 5px;
 }
 .form-control:focus,
 input:focus {
@@ -354,14 +373,20 @@ button.list-group-item:hover{
 .table tbody tr{
   cursor:pointer ;
 }
-.table thead th i.fa-unsorted {
+.table thead th{
+  position:relative;
+}
+.table thead th i.fa {
     font-size: 16px;
-    position: relative;
+    position: absolute;
     vertical-align: middle;
     margin-left: 3px;
     line-height: 1;
-    top: -2px;
-    cursor:pointer;
+    top: 8px;
+    cursor: pointer;
+}
+.table thead th .fa:nth-child(2){
+  top:11px;
 }
 .table thead th:first-child{
   border-radius:5px 0px 0px 0px;
@@ -397,16 +422,20 @@ button.list-group-item:hover{
     width: 36px;
     height: 36px;
     text-align: center;
-    line-height: 0.85;
-    font-size: 36px;
+    line-height: 1.05;
+    font-size: 30px;
     cursor:pointer;
+    background-color:#fff;
 }
 .addItem span.ico{
   top:8px;
 }
-.inputCard span.ico{
-  top:10px;
-  right:-5px;
+.inputCard span.ico {
+    top: 10px;
+    right: -5px;
+    font-size: 50px;
+    font-weight: lighter;
+    line-height: 28px;
 }
 .table thead th:nth-child(2),
 .table tbody td:nth-child(2){
@@ -439,9 +468,14 @@ thead.thead-inverse {
 .inputCard .control-group .form-group:nth-child(2) input,
 .inputCard .control-group .form-group:nth-child(3) input{
   width:100px;
+  width:56%;
+}
+.inputCard .control-group .form-group:nth-child(3) input{
+  width:72%;
 }
 .inputCard .control-group .form-group:nth-child(1) input{
   width:105px;
+  width:75%;
 }
 .inputCard .control-group .form-group:last-child p{
     margin: 6px auto;
@@ -558,6 +592,27 @@ ul.lock-group {
     margin:20px auto;
     resize:none;
 }
+.inputCard-middle span.check input {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    padding: 0;
+    min-height: auto;
+    margin: auto;
+    opacity: 0;
+    vertical-align: middle;
+    z-index: 999;
+}
+.inputCard-middle span.check img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
+.inputCard-middle .check.active img {
+    content: url("../images/checkbox.png");
+}
 .inputCard-middle textarea:focus{
     outline:0;
 }
@@ -592,12 +647,31 @@ ul.lock-group {
 .inputCard-bottom ul li:nth-child(2) {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
+    position:relative;
 }
 .inputCard-bottom ul li span {
     vertical-align: middle;
     margin-right: 5px;
     position: relative;
     top: -4px;
+}
+.inputCard-bottom ul li input{
+    padding: 0;
+    height: auto;
+    background: transparent;
+    outline: none;
+    border: 0 solid transparent;
+    box-shadow: 0 0 0 transparent;
+    width: 100px;
+}
+.inputCard-bottom ul li:nth-child(2) input{
+    position: absolute;
+    width: calc(100% - 40px);
+    top: 0;
+    height: 100%;
+    left: 20px;
+    opacity: 0;
+    cursor: pointer;
 }
 .inputCard-bottom ul li:last-child button {
     font-size: 10.5px;
@@ -607,10 +681,11 @@ ul.lock-group {
     position: relative;
     margin-right: 5px;
     height: 20px;
-}
-.inputCard-bottom ul li:last-child button:last-child{
     background-color:#22b7f7;
 }
+/*.inputCard-bottom ul li:last-child button:last-child{
+    background-color:#22b7f7;
+}*/
 .inputCard-bottom .btns button {
     border: 0;
     background-color: transparent;
@@ -688,4 +763,24 @@ ul.lock-group {
     vertical-align: middle;
     margin: 5px;
   }
+}
+.datepicker{
+  background-color: #233447;
+  text-align: center;
+}
+
+.datepicker table th.dow{
+  color:#857AFF;
+}
+.datepicker td.active:active, .datepicker td.active:hover:active, .datepicker td.active.active, .datepicker td.active:hover.active {
+    background-color: #857AFF;
+    background-image:none;
+}
+.datepicker td.day:hover {
+    background: #857AFF;
+    cursor: pointer;
+}
+.datepicker td.old:hover,
+.datepicker td.new:hover{
+  background:transparent;
 }

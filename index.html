@@ -18,6 +18,8 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="https://use.fontawesome.com/daa318f87c.js"></script>
+	 	<link rel="stylesheet" href="static/css/datepicker.css">
+	 	<script src="static/js/datepicker.js"></script>
 	 	<link type="text/css" rel="stylesheet" href="static/css/style.css" />
 	 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	</head>
@@ -58,22 +60,22 @@
 	    </nav>
 	    <div class="container-fluid">
 	      <div class="row">
-	        <div class="col-sm-4 col-md-3 sidebar">
+	        <div class="col-sm-4 col-md-2 sidebar">
 	        	<form class="navbar-form nav nav-sidebar date card">
 	        		<span class="icon"><img src="static/images/ico-calendar.png" alt="calendar" /></span>
-	            	<input type="date" class="form-control" placeholder="3 November 2016">
+	            	<input type="date"id="datepicker" class="form-control" placeholder="3 November 2016">
 	            	<span class="op">3 November 2016</span>
 	          	</form>
 	        	<div class="nav nav-sidebar drop-list">
-		        	<a href="#SubMenu1" class="list-group-item list-head" data-toggle="collapse" data-parent="#SubMenu1">Status<i class="fa fa-caret-down"></i></a>
-			        <div class="collapse list-group-submenu list-group-submenu-1" id="SubMenu1">
+		        	<a href="#SubMenu1" class="list-group-item list-head" data-parent="#SubMenu1">Status<i class="fa fa-caret-down"></i></a>
+			        <div class=" list-group-submenu list-group-submenu-1" id="SubMenu1">
 			          <a href="#" class="list-group-item" data-parent="#SubMenu1"><label><input type="checkbox" class="checkbox" value=""><img class="checkbox-img" src="static/images/emptycheckbox.png" alt="checkbox" />Open&nbsp;(<span>34</span>)</label></a>
 			          <a href="#" class="list-group-item" data-parent="#SubMenu1"><label><input type="checkbox" class="checkbox" value=""><img class="checkbox-img" src="static/images/emptycheckbox.png" alt="checkbox" />Gesloten&nbsp;(<span>4</span>)</label></a>
 			        </div>
 			    </div>
 			    <div class="nav nav-sidebar drop-list">
-		        	<a href="#SubMenu2" class="list-group-item list-head" data-toggle="collapse" data-parent="#SubMenu2">Toewijzing<i class="fa fa-caret-down"></i></a>
-			        <div class="collapse list-group-submenu list-group-submenu-1" id="SubMenu2">
+		        	<a href="#SubMenu2" class="list-group-item list-head" data-parent="#SubMenu2">Toewijzing<i class="fa fa-caret-down"></i></a>
+			        <div class=" list-group-submenu list-group-submenu-1" id="SubMenu2">
 			          <a href="#" class="list-group-item" data-parent="#SubMenu2"><label><input type="checkbox" class="checkbox" value=""><img class="checkbox-img" src="static/images/emptycheckbox.png" alt="checkbox" />Beveiliging&nbsp;(<span>34</span>)</label></a>
 			          <a href="#" class="list-group-item" data-parent="#SubMenu2"><label><input type="checkbox" class="checkbox" value=""><img class="checkbox-img" src="static/images/emptycheckbox.png" alt="checkbox" />Organisatie&nbsp;(<span>4</span>)</label></a>
 			          <a href="#" class="list-group-item" data-parent="#SubMenu2"><label><input type="checkbox" class="checkbox" value=""><img class="checkbox-img" src="static/images/emptycheckbox.png" alt="checkbox" />Beiden&nbsp;(<span>40</span>)</label></a>
@@ -87,7 +89,7 @@
 	        		<li><a href="#"><span class="icon"><img src="static/images/ico-clip.png" alt="Download" /></span><span>Exporteer naar Excel</span></a></li>
 	        	</ul>
 	        </div>
-	        <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
+	        <div class="col-sm-8 col-sm-offset-4 col-md-10 col-md-offset-2 main">
 	        	<form class="addItem-outer">
 	        		<div class="col-sm-12 col-md-12 addItem card">Logboek item aanmaken<!-- <i class="fa fa-lg fa-plus-square-o"></i> --><span class="ico card">+</span>
 	        		</div>
@@ -130,12 +132,12 @@
 			        	</div>
 			        	<div class="col-sm-12 col-md-12 inputCard-middle">
 							<textarea  placeholder="Log een melding..."></textarea>
-							<span><i class="fa fa-lg fa-check-square-o"></i>&nbsp;&nbsp;Gebruik enter om te loggen</span>
+							<span class="check"><input type="checkbox" class="checkbox" value=""><img class="card checkbox-img" src="static/images/emptycheckbox.png" alt="checkbox">&nbsp;&nbsp;Gebruik enter om te loggen</span>
 						</div>
 						<div class="col-sm-12 col-md-12 inputCard-bottom">
 							<ul class="left col-sm-12 col-md-8">
-								<li><span><img src="static/images/ico-user.png" alt="user" /></span>Bobby Gonzalez</li>
-								<li><span><img src="static/images/ico-clip.png" alt="clip" /></span>Bijlage Toevoegen</li>
+								<li><span><img src="static/images/ico-user.png" alt="user" /></span><input type="text" placeholder="Bobby Gonzalez" /></li>
+								<li><span><img src="static/images/ico-clip.png" alt="clip" /></span><input type="file" name="" size="" />Bijlage Toevoegen</li>
 								<li>Verzenden Als<button class="badge">TO DO</button><button class="badge">TO KNOW</button></li>
 							</ul>
 							<div class="btns right col-sm-12 col-md-4">
@@ -149,12 +151,12 @@
 		            <table class="table table-responsive">
 		            	<thead class="thead-inverse">
 		            		<tr>
-			            		<th>Tijd<i class="fa fa-lg fa-unsorted"></i></th>
-			            		<th>Melding<i class="fa fa-lg fa-unsorted"></i></th>
+			            		<th>Tijd<i class="fa fa-lg fa-sort-up"></i><i class="fa fa-lg fa-sort-down"></i></th>
+			            		<th>Melding<i class="fa fa-lg fa-sort-up"></i><i class="fa fa-lg fa-sort-down"></i></th>
 			            		<th>Gemeld</th>
-			            		<th>Voor<i class="fa fa-lg fa-unsorted"></i></th>
-			            		<th>Status<i class="fa fa-lg fa-unsorted"></i></th>
-			            		<th>Prio<i class="fa fa-lg fa-unsorted"></i></th>
+			            		<th>Voor<i class="fa fa-lg fa-sort-up"></i><i class="fa fa-lg fa-sort-down"></i></th>
+			            		<th>Status<i class="fa fa-lg fa-sort-up"></i><i class="fa fa-lg fa-sort-down"></i></th>
+			            		<th>Prio<i class="fa fa-lg fa-sort-up"></i><i class="fa fa-lg fa-sort-down"></i></th>
 			            	</tr>
 		            	</thead>
 		            	<tbody>
@@ -164,7 +166,7 @@
 		            			<td>CPO</td>
 		            			<td>Edo Haan</td>
 		            			<td><img src="static/images/ico-lock.png" alt="closed" /></td>
-		            			<td><img src="static/images/ico-severity-red.png" alt="red"</td>
+		            			<td><img src="static/images/ico-severity-red.png" alt="red"/></td>
 		            		</tr>
 		            		<tr>
 		            			<td>23:01</td>
@@ -172,65 +174,9 @@
 		            			<td>CPO</td>
 		            			<td>Edo Haan</td>
 		            			<td><img src="static/images/ico-lock.png" alt="closed" /></td>
-		            			<td><img src="static/images/ico-severity-red.png" alt="red"</td>
+		            			<td><img src="static/images/ico-severity-red.png" alt="red"/></td>
 		            		</tr>
-		            		<tr class="row" style="display:none">
-		            			<td class="col-sm-12 col-md-12">
-		            				<div class="inputCard card animated fadeIn">
-										<div class="col-sm-12 col-md-12 inputCard-top">
-											<div class="control-group">
-												<div class="controls form-inline">
-													<div class="col-sm-12 col-md-3 form-group">
-														<label for="tijd">Tijd</label>
-														<input type="text" class="input-small" placeholder="23:01" id="inputKey">
-													</div>
-													<div class="col-sm-12 col-md-3 form-group">
-														<label for="gemeld">Gemeld Door</label>
-														<input type="text" class="input-small" placeholder="" id="inputValue">
-													</div>
-													<div class="col-sm-12 col-md-3 form-group">
-														<label for="voor">Voor</label>
-														<input type="text" class="input-small" placeholder="Ontvanger" id="inputValue">
-													</div>
-													<div class="col-sm-12 col-md-2 form-group">
-														<ul class="severity-group">
-															<li><img src="static/images/ico-severity-green.png" alt="green" /></li>
-															<li><img src="static/images/ico-severity-yellow.png" alt="yellow" /></li>
-															<li><img src="static/images/ico-severity-orange.png" alt="orange" /></li>
-															<li><img src="static/images/ico-severity-red.png" alt="red" /></li>
-															<li class="active"><img src="static/images/ico-severity-black.png" alt="black" /></li>
-														</ul>
-													</div>
-													<div class="col-sm-12 col-md-1 form-group">
-														<ul class="lock-group">
-															<li class="lock active"></li>
-															<li class="open"></li>
-														</ul>
-													</div>
-													<!-- <div class="col-sm-12 col-md-1 form-group">
-														<p><i class="fa fa-lg fa-minus-square-o"></i></p>
-													</div> -->
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-12 col-md-12 inputCard-middle">
-											<input type="text" placeholder="Log een melding..." />
-											<span><i class="fa fa-lg fa-check-square-o"></i>&nbsp;&nbsp;Gebruik enter om te loggen</span>
-										</div>
-										<div class="col-sm-12 col-md-12 inputCard-bottom">
-											<ul class="left col-sm-12 col-md-8">
-												<li><span><img src="static/images/ico-user.png" alt="user" /></span>Bobby Gonzalez</li>
-												<li><span><img src="static/images/ico-clip.png" alt="clip" /></span>Bijlage Toevoegen</li>
-												<li>Verzenden Als<button class="badge">TO DO</button><button class="badge">TO KNOW</button></li>
-											</ul>
-											<div class="btns right col-sm-12 col-md-4">
-												<button class="col-sm-12 col-md-6">Loggen</button>
-												<button class="col-sm-12 col-md-6">Annuleren</button>
-											</div> 
-										</div>
-								    </div>				
-		            			</td>
-		            		</tr>
+		            		
 		            	</tbody>
 					</table>
 					<div class="inputCard-modal">
@@ -275,12 +221,12 @@
 								<!-- <input type="text" placeholder="Log een melding..." /> -->
 								<textarea  placeholder="Log een melding..."></textarea>
 								<span>Laatst bewerkt 22:45</span>
-								<span><i class="fa fa-lg fa-check-square-o"></i>&nbsp;&nbsp;Gebruik enter om te loggen</span>
+								<span class="check"><input type="checkbox" class="checkbox" value=""><img class="card checkbox-img" src="static/images/emptycheckbox.png" alt="checkbox">&nbsp;&nbsp;Gebruik enter om te loggen</span>
 							</div>
 							<div class="col-sm-12 col-md-12 inputCard-bottom">
 								<ul class="left col-sm-12 col-md-8">
-									<li><span><img src="static/images/ico-user.png" alt="user" /></span>Bobby Gonzalez</li>
-									<li><span><img src="static/images/ico-clip.png" alt="clip" /></span>Bijlage Toevoegen</li>
+									<li><span><img src="static/images/ico-user.png" alt="user" /></span><input type="text" placeholder="Bobby Gonzalez" /></li>
+									<li><span><img src="static/images/ico-clip.png" alt="clip" /></span><input type="file" name="" size="" />Bijlage Toevoegen</li>
 									<li>Verzenden Als<button class="badge">TO DO</button><button class="badge">TO KNOW</button></li>
 								</ul>
 								<div class="btns right col-sm-12 col-md-4">
@@ -319,6 +265,11 @@ $(".overlay").click(function(){
 $(".checkbox").click(function(){
 	$(this).parent().toggleClass("active");
 });
-
+$( document ).ready(function() {
+    $( "#datepicker" ).datepicker();
+}); 
+$("#datepicker").click(function(){
+	$( ".datepicker" ).show();
+});
 </script>
 </html>
