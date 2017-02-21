@@ -671,7 +671,7 @@ ul.lock-group {
     height: 100%;
     left: 20px;
     opacity: 0;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 .inputCard-bottom ul li:last-child button {
     font-size: 10.5px;
