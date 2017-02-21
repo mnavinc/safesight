@@ -626,6 +626,10 @@ ul.lock-group {
     left: 20px;
     right: auto;
 }
+.inputCard-bottom {
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+}
 .inputCard-bottom ul {
     margin-bottom: 0;
     padding: 15px 0;
