@@ -160,7 +160,7 @@
 			            	</tr>
 		            	</thead>
 		            	<tbody>
-		            		<tr>
+		            		<tr class="trow">
 		            			<td>23:01</td>
 		            			<td>Muziek op alle stages is uitgevallen.</td>
 		            			<td>CPO</td>
@@ -168,7 +168,7 @@
 		            			<td><img src="static/images/ico-lock.png" alt="closed" /></td>
 		            			<td><img src="static/images/ico-severity-red.png" alt="red"/></td>
 		            		</tr>
-		            		<tr>
+		            		<tr class="trow">
 		            			<td>23:01</td>
 		            			<td>Muziek op alle stages is uitgevallen.Muziek op alle stages is uitgevallen.</td>
 		            			<td>CPO</td>
@@ -249,15 +249,18 @@ $(".addItem-outer .inputCard span.ico").click(function(){
 	$(".addItem-outer .inputCard").hide();
 	$(".addItem-outer .addItem").show();
 });
-$(".table tbody tr").click(function(){
+$(".trow").click(function(){
+	$("tr.modalTr").insertAfter(this).show();
 	$(".inputCard-modal .inputCard").css("display", "inline-block");
 	$(".overlay").show();
 });
-$(".inputCard-modal button").click(function(){
+$(".modalTr .inputCard-modal button").click(function(){
+	$("tr.modalTr").hide();
 	$(".inputCard-modal .inputCard").hide();
 	$(".overlay").hide();
 });
 $(".overlay").click(function(){
+	$("tr.modalTr").hide();
 	$(".inputCard-modal .inputCard").hide();
 	$(".overlay").hide();
 });
